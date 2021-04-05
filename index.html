@@ -1,26 +1,61 @@
 <!DOCTYPE html>
+<html>
 
 <head>
-    <title> Page Title</title>
+    <title> Image Gallery</title>
     <script type="text/javascript" src="script.js"></script>
-    <link href="style.css">
+    <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-    <img src="https://source.unsplash.com/D_7HwWuOOzU" alt="image-1" onclick="enlarge()" width="30%" id="image-1">
-    <img src="https://source.unsplash.com/Mvmx3jhjRh8" alt="image-2">
-    <img src="https://source.unsplash.com/8Wr1_vn-QeI" alt="image-3">
-    <img src="https://source.unsplash.com/MpKiQTIJTP8" alt="image-4">
-    <img src="https://source.unsplash.com/h9-5tO_EIeQ" alt="image-5">
-    <img src="https://source.unsplash.com/E5ApkrnucMg" alt="image-6">
-    <img src="https://source.unsplash.com/xsqhIEFlqsc" alt="image-7">
-    <img src="https://source.unsplash.com/QMgIlcvYDvE" alt="image-8">
-    <img src="https://source.unsplash.com/W5g4HIwR3N0" alt="image-9">
-    <img src="https://source.unsplash.com/vTkam84Z20c" alt="image-10">
-    <img src="https://source.unsplash.com/UN4KHKM_4mo" alt="image-11">
-    <img src="https://source.unsplash.com/kSdi_gqbGGs" alt="image-12">
-    <div id="enlarged-box">
-
+    <div class="row">
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/D_7HwWuOOzU" alt="image-1" onclick="enlarge(this)" data-index="0">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/75_s8iWHKLs" alt="image-2" onclick="enlarge(this)" data-index="1">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/8Wr1_vn-QeI" alt="image-3" onclick="enlarge(this)" data-index="2">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/MpKiQTIJTP8" alt="image-4" onclick="enlarge(this)" data-index="3">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/h9-5tO_EIeQ" alt="image-5" onclick="enlarge(this)" data-index="4">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/E5ApkrnucMg" alt="image-6" onclick="enlarge(this)" data-index="5">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/ZZkeAKWFjzY" alt="image-7" onclick="enlarge(this)" data-index="6">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/QMgIlcvYDvE" alt="image-8" onclick="enlarge(this)" data-index="7">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/W5g4HIwR3N0" alt="image-9" onclick="enlarge(this)" data-index="8">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/vTkam84Z20c" alt="image-10" onclick="enlarge(this)" data-index="9">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/UN4KHKM_4mo" alt="image-11" onclick="enlarge(this)" data-index="10">
+        </div>
+        <div class="column">
+            <img class="image" src="https://source.unsplash.com/kSdi_gqbGGs" alt="image-12" onclick="enlarge(this)" data-index="11">
+        </div>
     </div>
-    <img id="box-image">
+    <div id="enlarged-box">
+        <div id="container">
+            <span class="close" onclick="closeImage(this)">&times;</span>
+            <img id="expandedImg" style="width:100%">
+            <span id="previous">&#10094;
+            </span>
+            <span id="next">&#10095;</span>
+        </div>
+    </div>
+
 </body>
+
+</html>

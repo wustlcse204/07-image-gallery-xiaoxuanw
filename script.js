@@ -1,19 +1,46 @@
-//get the enlarged box
-var enlargedBox = document.getElementById("enlarged-box");
+var slideIndex = 0;
+var expandImg = null;
+var allImages = null;
+var lastItem = null;
+var firstItem = null;
 
-//get the image 
-var img = document.getElementById("image-1");
-var boxImage = document.getElementById("boxed-image")
+function enlarge(imgs) {
+    expandImg = document.getElementById('expandedImg');
+    slideIndex = parseInt(imgs.getAttribute("data-index"));
+    expandImg.src = imgs.src;
+    document.getElementById("enlarged-box").style.display = "block";
+    console.log(slideIndex)
+    allImages = document.getElementsByClassName('image');
+    lastItem = allImages[allImages.length - 1];
+    firstItem = allImages[0];
+    console.log(allImages);
+    document.getElementById("next").addEventListener("click", nextSlide);
+    document.getElementById("previous").addEventListener("click", previous);
 
-
-function enlarge() {
-    img.style.transform = "scale(2)";
 }
 
-function closeImage() {
-
+function closeImage(close) {
+    document.getElementById("enlarged-box").style.display = "none";
 }
 
-function changeImage() {
+function previous() {
+    slideIndex -= 1;
+    if (slideIndex <= 0) {
+        expandImg.src = lastItem.src;
+        slideIndex = allImages.length - 1;
+        console.log(slideIndex)
+    } else {
+        expandImg.src = allImages[slideIndex].src;
+    }
+}
 
+function nextSlide() {
+    slideIndex += 1;
+    if (slideIndex == allImages.length) {
+        expandImg.src = firstItem.src;
+        slideIndex = 0;
+        console.log(slideIndex);
+    } else {
+        expandImg.src = allImages[slideIndex].src;
+    }
 }
