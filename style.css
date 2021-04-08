@@ -1,15 +1,19 @@
 .column img {
-    width: 200px;
+    width: 300px;
     height: auto;
 }
 
 .column img:hover {
-    box-shadow: 10px 5px 5px gray;
+    box-shadow: 10px 5px 10px gray;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .column {
-    float: left;
-    width: 25%;
+    padding: 6px;
 }
 
 #enlarged-box {
@@ -31,6 +35,12 @@
     margin-left: auto;
     margin-right: auto;
     opacity: initial;
+}
+
+.close {
+    font-size: xx-large;
+    color: white;
+    float: right;
 }
 
 #previous {
